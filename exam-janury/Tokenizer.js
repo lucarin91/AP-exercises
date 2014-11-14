@@ -42,8 +42,10 @@
         };
     }
 
-     module.exports.getTokenizer = function(stream){
-        return new Tokenizer(stream);
-    };
+     module.exports.getInstance = function(stream){
+       var t = new Tokenizer(stream);
+       t.consumeToken();
+       return t;
+   };
 
 }());

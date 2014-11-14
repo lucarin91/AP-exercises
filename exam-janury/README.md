@@ -2,12 +2,12 @@
 
 ##Exercise 1
 ###Grammar:
-E-> E + NUM | NUM
+E-> E + NUM | NUM + NUM
 NUM -> digit
 
-eliminate left-recursion
-E   -> E1 + NUM
-E1  -> E | NUM
+E   -> NUM P
+P   -> + NUM P1
+P1  -> P | epsilon
 NUM -> digit
 
 possible derivation:
