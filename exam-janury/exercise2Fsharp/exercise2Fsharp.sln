@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{4925A630-B079-445d-BCD4-3A9C94FE9307}") = "exercise2Fsharp", "exercise2Fsharp.fsproj", "{875EBFB6-BFB0-4E3D-8EE7-1491C48C881A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{875EBFB6-BFB0-4E3D-8EE7-1491C48C881A}.Debug|x86.ActiveCfg = Debug|x86
+		{875EBFB6-BFB0-4E3D-8EE7-1491C48C881A}.Debug|x86.Build.0 = Debug|x86
+		{875EBFB6-BFB0-4E3D-8EE7-1491C48C881A}.Release|x86.ActiveCfg = Release|x86
+		{875EBFB6-BFB0-4E3D-8EE7-1491C48C881A}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = exercise2Fsharp.fsproj
+		Policies = $0
+		$0.DotNetNamingPolicy = $1
+		$1.DirectoryNamespaceAssociation = None
+		$1.ResourceNamePolicy = FileFormatDefault
+		$0.TextStylePolicy = $2
+		$2.inheritsSet = VisualStudio
+		$2.inheritsScope = text/plain
+		$2.scope = text/x-fsharp
+	EndGlobalSection
+EndGlobal
