@@ -40,13 +40,13 @@ type Tokenizer(s:StreamReader) =
                 parseInt(n * 10 + (c - int('0')))
             else n
     
-    let rec parseIde(n) =
+    let rec parseStr(n) =
         if s.EndOfStream then n
         else
             let c = s.Peek()
             if c >= int('A') && c<= int('z') then
                 eatChar()
-                parseIde(n + string(c))
+                parseStr(n + (char(c)).ToString())
             else n
     
     let parseArrow() : Token =
@@ -64,22 +64,36 @@ type Tokenizer(s:StreamReader) =
         if s.EndOfStream then lastToken <- EOF
         else
             let c = char(s.Peek())
+            lastToken <-
             match c with
-                | '-' -> eatChar(); lastToken <- parseArrow()
-                | '=' -> eatChar(); lastToken <- Equal
-                | '(' -> eatChar(); lastToken <- OpenBrace
-                | ')' -> eatChar(); lastToken <- ClosedBrace
-                | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' ->
-                    lastToken <- Num(parseInt(0))
-                | _ -> if int(c) >= int('A') && int(c)<= int('z') then
-                            lastToken <- Ide(parseIde(""))
-                       else
-                            failwith("Unexpeted character")
-                            
+            | '-' -> eatChar(); parseArrow()
+            | '=' -> eatChar(); Equal
+            | '(' -> eatChar(); OpenBrace
+            | ')' -> eatChar(); ClosedBrace
+            | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' ->
+                Num(parseInt(0))
+            | _ ->
+                if int(c) >= int('A') && int(c)<= int('z') then
+                    let str = parseStr("")
+                    match str with 
+                    | "let" -> Let
+                    | "fun" -> Fun
+                    | "in"  -> In
+                    | "app" -> App
+                    |_ -> Ide(str)
+                else
+                    failwith("Unexpeted character")
+                        
+//E :: let IDE = func(x,3) -> sum(x,3) in IDE(x,3)
+
+
+//type Parser(t:Tokenizer) =
+    
+
 
 let ms = new MemoryStream()
 let w = new StreamWriter(ms)
-w.Write("234234")
+w.Write("234234 ( ) ciao let")
 w.Flush()
 ms.Position <- 0L
 
@@ -89,5 +103,3 @@ let t = Tokenizer(s)
 while t.CurrentToken <> EOF do
     t.NextToken() |> ignore
     printf "%s\n" (t.CurrentToken.ToString())
-    
-printf "no"

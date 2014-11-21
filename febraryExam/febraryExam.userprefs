@@ -2,12 +2,12 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Program.fs">
     <Files>
-      <File FileName="Program.fs" Line="1" Column="1" />
+      <File FileName="Program.fs" Line="122" Column="31" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
-          <Node name="exercise2Fsharp" expanded="True">
+          <Node name="febraryExam" expanded="True">
             <Node name="Program.fs" selected="True" />
           </Node>
         </State>

@@ -28,13 +28,13 @@
             var c = s.peek();
             if (c !== undefined){
               if (c.charCodeAt() >= '0'.charCodeAt() && c.charCodeAt() <= '9'.charCodeAt()){
-                currentToken = parseNum(0);
+                currentToken = {'name':'i', 'value': parseNum(0)};
                 //s.consume();
               }else if (c == '+'){
-                currentToken = 'plus';
+                currentToken = {'name':'+'};
                 s.consume();
               }
-            }else currentToken = null;
+            }else currentToken = {'name':'EOF'};
         };
 
         this.lastToken = function(){
