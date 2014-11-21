@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!--Created with JFLAP 6.4.--><structure>
+	<type>grammar</type>
+	<!--The list of productions.-->
+	<production>
+		<left>E</left>
+		<right>NP</right>
+	</production>
+	<production>
+		<left>P</left>
+		<right>+NB</right>
+	</production>
+	<production>
+		<left>B</left>
+		<right>P</right>
+	</production>
+	<production>
+		<left>B</left>
+		<right/>
+	</production>
+	<production>
+		<left>N</left>
+		<right>i</right>
+	</production>
+</structure>
